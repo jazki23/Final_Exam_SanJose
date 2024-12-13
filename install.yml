@@ -90,4 +90,4 @@
     - name: Update MOTD
       copy:
         dest: /etc/motd
-        content: "Ansible Managed by Kier"
+        content: "Ansible Managed by {{ username }}"
