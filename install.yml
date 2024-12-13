@@ -87,6 +87,10 @@
         state: started
         enabled: true
 
+    - name: Debug before updating MOTD
+      debug:
+        msg: "Updating MOTD with content: Ansible Managed by {{ username }}"
+
     - name: Update MOTD
       copy:
         dest: /etc/motd
