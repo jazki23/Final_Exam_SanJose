@@ -1,0 +1,33 @@
+---
+- hosts: debian, centos
+  become: yes
+  vars_files:
+    - vars/config.yaml
+
+  tasks:
+    - name: Install enterprise service
+      package:
+        name: "{{ enterprise_service.package }}"
+        state: present
+    
+    - name: Configure enterprise service
+      service:
+        name: "{{ enterprise_service.name }}"
+        state: started
+        enabled: true
+    
+    - name: Install monitoring tool
+      package:
+        name: "{{ monitoring_tool.package }}"
+        state: present
+    
+    - name: Configure monitoring tool
+      service:
+        name: "{{ monitoring_tool.name }}"
+        state: started
+        enabled: true
+
+    - name: Change Message of the Day (MOTD)
+      copy:
+        dest: /etc/motd
+        content: "{{ motd_message }}"
