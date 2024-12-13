@@ -3,7 +3,7 @@
   hosts: all
   become: yes
   vars:
-    username: "<kier>"  
+    username: "kier"  
 
   tasks:
     - name: Install Jenkins on Ubuntu
