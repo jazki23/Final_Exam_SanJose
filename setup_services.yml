@@ -70,30 +70,4 @@
 
     - name: Start and enable Prometheus service
       systemd:
-        name: prometheus
-        state: started
-        enabled: yes
-
-    - name: Configure Prometheus
-      copy:
-        dest: /etc/prometheus/prometheus.yml
-        content: |
-          global:
-            scrape_interval: 15s
-
-          scrape_configs:
-            - job_name: 'node'
-              static_configs:
-                - targets: ['localhost:9100']  # Change this to your target hosts
-      notify: Restart Prometheus
-
-    - name: Change MOTD
-      copy:
-        dest: /etc/motd
-        content: "Ansible Managed by {{ username }}"
-
-  handlers:
-    - name: Restart Prometheus
-      systemd:
-        name: prometheus
-        state: restarted
+        name: promet
