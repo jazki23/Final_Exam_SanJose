@@ -1,5 +1,0 @@
-Install and configure one enterprise service that can be installed in Debian and Centos servers
-
-3.2 Install and configure one monitoring tool that can be installed in Debian and Centos servers (if it is a stack there should be option of different host)
-
-4.4 Change Motd as "Ansible Managed by <username>"
